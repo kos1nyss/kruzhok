@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_navigation"
+    app:startDestination="@id/login_fragment"
+    >
+    <fragment android:id="@+id/register_fragment"
+        android:name="com.bobnevpavel.app.SignUpGragment"
+        tools:layout="@layout/fragment_sign_up"
+        >
+        <action
+            android:id="@+id/action_register_fragment_to_quiz_fragment"
+            app:destination="@id/quiz_animation_fragment" />
+    </fragment>
+    <fragment android:id="@+id/login_fragment"
+        android:name="com.bobnevpavel.app.LoginFragment"
+        tools:layout="@layout/fragment_login"
+        >
+        <action
+            android:id="@+id/action_login_fragment_to_register_fragment"
+            app:destination="@id/register_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quiz_animation_fragment"
+        android:name="com.bobnevpavel.app.QuizAnimation"
+        tools:layout="@layout/fragment_quiz_animation"
+        >
+        <action
+            android:id="@+id/action_quiz_animation_fragment_to_quiz_fragment"
+            app:destination="@id/quiz_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz_fragment"
+        android:name="com.bobnevpavel.app.QuizFragment"
+        tools:layout="@layout/fragment_quiz"
+        >
+        <action
+            android:id="@+id/action_quiz_fragment_to_courses_fragment"
+            app:destination="@id/courses_fragment" />
+    </fragment>
+    <fragment android:id="@+id/courses_fragment"
+        android:name="com.bobnevpavel.app.CourcesFragment"
+        tools:layout="@layout/fragment_cources">
+        <action
+            android:id="@+id/action_courses_fragment_to_course_fragment"
+            app:destination="@id/course_fragment" />
+    </fragment>
+    <fragment android:id="@+id/course_fragment"
+        android:name="com.bobnevpavel.app.CourseFragment"
+        tools:layout="@layout/fragment_course">
+        <action
+            android:id="@+id/action_course_fragment_to_courses_fragment"
+            app:destination="@id/courses_fragment" />
+    </fragment>
+</navigation>
